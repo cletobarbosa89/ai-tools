@@ -1,0 +1,184 @@
+/* 
+    Author: Cleto Barbosa
+    Designation: Lead Software Engineer
+    Description: AI-powered chat interface for AI tools
+*/
+
+/* general styles */
+html, body {
+    height: 100%;
+}
+
+.loading {
+    cursor: wait; /* busy cursor feedback */
+}
+
+.loading * {
+    /* disable all mouse events on children elements */
+    pointer-events: none; 
+}
+
+/* boostrap overidden styles */
+
+
+/* Custom styles */
+.wrapper-bg {
+    background: url('../assets/background.jpg');
+    position: relative;
+    height: 100%;
+}
+
+.main-wrapper {
+    height: 100%;
+}
+
+.bot-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    background: url('../assets/bot.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: .3;
+    z-index: -999;
+}
+
+.input-box {
+    border: none!important;
+    box-shadow: none!important;
+}
+
+.chat-container {
+    height: 80vh;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.chat-messages {
+    height: 650px;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a;
+    border-radius: 4px;
+    border: 2px solid #2a2a2a;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.user-message {
+    color: #c0b7d9;
+    background-color: #1b1a22;
+    border: 1px solid #494364;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.ai-message {
+    /* background-color: #f0f0f0; */
+    color: #fff;
+    align-self: flex-start;
+}
+
+.message-suggestion {
+    margin-bottom: 10px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.ai-message-suggestion {
+    color: #c0b7d9;
+    background-color: rgb(33 28 60);
+    border: 1px solid #494364;
+    border-radius: 10px;
+    align-self: flex-start;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.button-mic, .button-submit {
+    background-color: #fff;
+}
+
+.mic-icon {
+    background: #fff url('../assets/mic.gif') no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
+
+.mic-icon.off {
+    background: url('../assets/mic.gif');
+    /* width: 30px; */
+    /* height: 30px; */
+    background-size: contain;
+}
+
+.mic-icon.on {
+    background: url('../assets/mic-animate.gif');
+    /* width: 30px; */
+    /* height: 30px; */
+    background-size: contain;
+}
+
+.disable {
+    pointer-events: none;
+    background-image: url('../assets/mic-disable.png')!important;
+}
+
+.interim-wrap {
+    display: none;
+    /* position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 0;
+    height: 0; */
+    padding: 0 0 0 10px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.interim-wrap.block {
+    display: block;
+    width: 100%;
+    height: 20px;
+}
+
+.speaking, .interim {
+    color: #fff;
+}
+
+.submit-icon {
+    background: #fff url('../assets/arrow-right.png') no-repeat;
+    background-size: contain;
+    width: 63px;
+    height: 62px;
+}
+
+.button-mic:hover, .button-submit:hover, .button-mic:active, .button-submit:active, .button-mic:focus, .button-submit:focus {
+    background-color: #fff!important;
+}
+
+
+/* Animations */
